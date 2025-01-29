@@ -7,17 +7,21 @@ library("SummarizedExperiment")
 
 ## Creamos los datos para nuestro objeto de tipo SummarizedExperiment
 ## para 200 genes a lo largo de 6 muestras
-nrows <- 200
-ncols <- 6
+nrows <- 200 # Numero de genes
+ncols <- 6 # Numero de muestras
 ## Números al azar de cuentas
-set.seed(20210223)
+set.seed(20210223) # Hace que el script sea reproducible
 counts <- matrix(runif(nrows * ncols, 1, 1e4), nrows)
+
 ## Información de nuestros genes
 rowRanges <- GRanges(
   rep(c("chr1", "chr2"), c(50, 150)),
   IRanges(floor(runif(200, 1e5, 1e6)), width = 100),
+  # 200 desd la bp 1e5 al 1e6
   strand = sample(c("+", "-"), 200, TRUE),
+  # Asignar al azar a la cadena + o -
   feature_id = sprintf("ID%03d", 1:200)
+  # %03 sintaxis para poner 0s
 )
 names(rowRanges) <- paste0("gene_", seq_len(length(rowRanges)))
 ## Información de nuestras muestras
@@ -33,7 +37,7 @@ rse <- SummarizedExperiment(
 )
 
 ## Exploremos el objeto resultante
-rse
+rse # RangedSummarizedEsperiment
 
 ## Número de genes y muestras
 dim(rse)
@@ -60,9 +64,16 @@ colData(rse)
 ## ----rse_exercise---------------------------------------------
 ## Comando 1
 rse[1:2, ]
+
+# Se filtran los primeros dos genes (filas) y se conservan las 6 muestras
+
 ## Comando 2
 rse[, c("A", "D", "F")]
 
+identical(rse[,c("A","D","F")],rse[,c(1,4,6)])
+# [1] TRUE
+
+# Se conservan todos los genes y se filtran las muestras A, D y F
 
 ## ----isee_basic, eval = FALSE---------------------------------
 # ## Explora el objeto rse de forma interactiva

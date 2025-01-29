@@ -21,3 +21,14 @@ ColData
 ---
 
 'Copy permalink' es el link a la pagina específica en el tiempo. 
+
+
+`View(objeto)` Para ver el objeto en una tabla 
+
+
+Metadata
+
+
+ìdentical(a, b)` para comparar dos objetos
+
+
