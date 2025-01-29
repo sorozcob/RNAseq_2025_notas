@@ -1,0 +1,86 @@
+---
+title: "Bioconductor"
+author: "Santiago Orozco"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Fundado por Robert Gentleman
+
+Documentación del paquete
+
+- Vignette: explica cómo las herramientas del paquete estás organizadas
+
+Los paquetes son evaluados diariamente en OSs diferentes. Si un paquete no pasa la evaluación, se le manda un correo al autor del paquete.
+
+** Los paquetes en CRAM solo son evaluados en el momento de publicarse el paquete
+
+Junta de Comunidad, Científica y Técnica. Para que ayuda a promover la unión a la comunidad
+
+[Bioconductor](https://bioconductor.org/)
+
+- Software
+- AnnotationData: permiten accesar a db sin la necesidad de descargar la db. Los crea el equipo de Bioconductor en general
+**Aaron Lun
+- ExperimentData: son los datos de proyectos para poder reanalizar los datos de una forma más sencilla
+** Alejandro Reyes, genómico de la 5° generación
+** Robert Gentleman, funfador de Bioconductor
+- Workflow: es 
+
+Rank: basado en el número de descargas. Mientras más bajo el número más descargado es.
+
+Descargar paquetes de Bioconductor:
+```{r}  
+
+BiocManager::install("nombre_paquete")
+BiocManager::version()
+```
+
+Para tener diferentes versiones de BioConductor, se recomienda tener diferentes versiones de R.
+
+Para ver en dónde hay paquetes instalados usar `.libPaths()`. Hay un orden de prioridad en la instalación de paquete, el primero en la lista es el que se va a descargar
+
+## Página de un paquete de Bioconductor
+Suport: preguntas en los últimos 6 meses
+Documentación:
+- Vignette
+- Refference Manual, lo crea bioconductor de forma automática
+BioC pide que haya tantos ejemplos reproducibles
+- NEWs, info de cómo ha cambiado el paquete
+
+Detalles:
+- URL: para encontrar más información (GitHub, sitio web)
+- Bug Report: dónde reportar errores
+
+
+release: Consumo público. Números pares en el Y de la edición (3.20)
+devel: Versión de prueba, o los más recientes aprovado. Nones (3.21)
+
+R se actualiza una vez al año (abril). Antes dos veces al año.
+BioC se actualiza 2 veces al año (abril y ocutubre)
+
+Apartado de 'Learn'
+Eventos 
+
+Eventos de CDSB
+
+** Mara Averick, difundadora de paquetes de BioC
+
+
+Ejercicios grupal:
+**Multi-omic Pathway Analysis of Cancer**
+**scDotPlot**
+Paquete gráfico
+** Marcel Ramos, 
+**TCGA (The Cancer Genome Atlas)**
+**CleanUpRNAseq**. Medio imcompleto, 
+
+
+
+Paquete **redep** para evaluar que un paquete no rompa con las dependencias de otros paquetes
+
+
