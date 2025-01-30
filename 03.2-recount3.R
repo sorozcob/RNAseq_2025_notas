@@ -20,11 +20,15 @@ proj_info <- subset(
 rse_gene_SRP009615 <- create_rse(proj_info)
 ## Explora el objeto RSE
 rse_gene_SRP009615
+dim(rse_gene_SRP009615)
 
+metadata(rse_gene_SRP009615)
+rowRanges(rse_gene_SRP009615) # OBJETO ENTERO DE la info de los genes
+rowData(rse_gene_SRP009615) #
 
 ## ----"interactive_display", eval = FALSE----------------------
 # ## Explora los proyectos disponibles de forma interactiva
-# proj_info_interactive <- interactiveDisplayBase::display(human_projects)
+proj_info_interactive <- interactiveDisplayBase::display(human_projects)
 # ## Selecciona un solo renglón en la tabla y da click en "send".
 #
 # ## Aquí verificamos que solo seleccionaste un solo renglón.

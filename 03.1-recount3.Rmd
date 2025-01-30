@@ -25,16 +25,90 @@ Al seleccionar un projecto, en la parte de abajo aparece el código de R para de
 [recount3]()
 
 
-```{r}  
-## Load recount3 R package
-library("recount3")
+sra.recount_project.MD.gz.
+gtex.recount_project.MD.gz.
+tcga.recount_project.MD.gz.
 
+
+
+
+```{r}  
+class() # Ver qué objeto es
+dim() # Ver dimensiones
 ```
 
+```{r}
+> rse_gene_SRP009615 <- create_rse(proj_info)
+2025-01-30 09:52:25.14367 downloading and reading the metadata.
+2025-01-30 09:52:27.262816 caching file sra.sra.SRP009615.MD.gz.
+adding rname 'http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.sra.SRP009615.MD.gz'
+  |========================================| 100%
+  |========================================| 100%
+
+2025-01-30 09:52:29.621245 caching file sra.recount_project.SRP009615.MD.gz.
+adding rname 'http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_project.SRP009615.MD.gz'
+  |========================================| 100%
+  |========================================| 100%
+
+2025-01-30 09:52:32.055927 caching file sra.recount_qc.SRP009615.MD.gz.
+adding rname 'http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_qc.SRP009615.MD.gz'
+  |========================================| 100%
+  |========================================| 100%
+
+2025-01-30 09:52:34.136888 caching file sra.recount_seq_qc.SRP009615.MD.gz.
+adding rname 'http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz'
+  |========================================| 100%
+  |========================================| 100%
+
+2025-01-30 09:52:36.395002 caching file sra.recount_pred.SRP009615.MD.gz.
+adding rname 'http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz'
+  |========================================| 100%
+  |========================================| 100%
+
+2025-01-30 09:52:37.982931 downloading and reading the feature information.
+2025-01-30 09:52:38.745009 caching file human.gene_sums.G026.gtf.gz.
+adding rname 'http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz'
+  |========================================| 100%
+  |========================================| 100%
+
+2025-01-30 09:52:41.494834 downloading and reading the counts: 12 samples across 63856 features.
+2025-01-30 09:52:42.264335 caching file sra.gene_sums.SRP009615.G026.gz.
+adding rname 'http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz'
+  |========================================| 100%
+  |========================================| 100%
+
+2025-01-30 09:52:46.186096 constructing the RangedSummarizedExperiment (rse) object. # Crea el objeto RangedSummarizedExperiment
+```
+
+```{r}  
+mcol() # Metadata columns
+
+transform_counts() # Transformar otros tipos de datos de lectura, como RPKM o TPM, a cuentas
+```
+
+La info en tcga y gtex es más completa que la de sra. Solo con sra se debe usar `expand_sra_attributes`
+
+
+BigWig
+
+### Ejercicio
 
 
 
 
+grep y grepl
 
 
+## Crear un sitio web con postcards 
+> Renee García-Flores
+** Andrés Moreno-Estrada, Cinvestav
+** Tuuli Lappalainen, New Yorck Genome Center
+** Semir Beyaz, 
+
+### Postcards
+
+```{r}  
+install.packages("postcards")
+
+```
 

@@ -32,3 +32,23 @@ Metadata
 ìdentical(a, b)` para comparar dos objetos
 
 
+
+## iSEE ()
+Cómo visualizar los datos de los objetos. Es interactivo
+
+`iSEE::iSEE(objeto)`
+
+Sample assay plot 1 
+
+Centrar, 
+Escalar, dividir sobre la sd de cada gen
+
+
+Guardar parámetro: Export > Display panel 
+Cargar parámetros de figuras: 
+settings
+Descargar figuras de iSEE: Export > Display panel outputs, descargar las figuras que quieras en formato pdf. 
+
+** `lobster::obj_size(objeto)` para ver el tamaño del objeto
+
+

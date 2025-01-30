@@ -65,20 +65,20 @@ colData(rse)
 ## Comando 1
 rse[1:2, ]
 
-# Se filtran los primeros dos genes (filas) y se conservan las 6 muestras
+### Se filtran los primeros dos genes (filas) y se conservan las 6 muestras
 
 ## Comando 2
 rse[, c("A", "D", "F")]
 
 identical(rse[,c("A","D","F")],rse[,c(1,4,6)])
-# [1] TRUE
+### [1] TRUE
 
-# Se conservan todos los genes y se filtran las muestras A, D y F
+### Se conservan todos los genes y se filtran las muestras A, D y F
 
 ## ----isee_basic, eval = FALSE---------------------------------
 # ## Explora el objeto rse de forma interactiva
-# library("iSEE")
-# iSEE::iSEE(rse)
+library("iSEE")
+iSEE::iSEE(rse)
 
 
 ## ----download_sce_layer---------------------------------------
@@ -91,4 +91,4 @@ lobstr::obj_size(sce_layer)
 
 
 ## ----explore_sce_layer, eval = FALSE--------------------------
-# iSEE::iSEE(sce_layer)
+iSEE::iSEE(sce_layer)
