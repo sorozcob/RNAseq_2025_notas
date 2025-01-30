@@ -1,0 +1,40 @@
+---
+title: '03.1'
+author: "Santiago Orozco"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## SPEAQuesy para procesar datos de FASTQ
+
+## recount3
+Mejorar la accesibilidad de datos publicos.
+ReCount → recount (2) → recount3
+recount3 700 mil muestras de RNA-seq de humano y ratón
+
+18830 estudios en recount3
+
+Al seleccionar un projecto, en la parte de abajo aparece el código de R para descargar el SummarizedExperimment
+
+[Documentación de recount3]()
+
+[recount3]()
+
+
+```{r}  
+## Load recount3 R package
+library("recount3")
+
+```
+
+
+
+
+
+
+
+
