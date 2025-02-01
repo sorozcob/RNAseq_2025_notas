@@ -29,14 +29,57 @@ vd <- ExploreModelMatrix::VisualizeDesign(
 cowplot::plot_grid(plotlist = vd$plotlist)
 
 
+
+
+# Ejemplo con sampleData
+mat2 <- with(sampleData, model.matrix( ~ genotype + treatment))
+
+
+mat2
+colnames(mat2)
+
+cbind(mat2, sampleData)
+
+
 ## ----EMM_example1_interactive, eval = FALSE-------------------
 # ## Usaremos shiny otra ves
-# app <- ExploreModelMatrix(
-#     sampleData = sampleData,
-#     designFormula = ~ genotype + treatment
-# )
-# if (interactive()) shiny::runApp(app)
+app <- ExploreModelMatrix(
+     sampleData = sampleData,
+     designFormula = ~ genotype + treatment
+ )
+if (interactive()) shiny::runApp(app)
 
+
+## EJEMPLO 2
+
+(sampleData <- data.frame(
+  Response = rep(c("Resistant", "Sensitive"), c(12, 18)),
+  Patient = factor(rep(c(1:6, 8, 11:18), each = 2)),
+  Treatment = factor(rep(c("pre","post"), 15)),
+  ind.n = factor(rep(c(1:6, 2, 5:12), each = 2))))
+
+vd <- VisualizeDesign(
+  sampleData = sampleData,
+  designFormula = ~ Response + Response:ind.n + Response:Treatment,
+  textSizeFitted = 3
+)
+cowplot::plot_grid(plotlist = vd$plotlist, ncol = 1)
+
+## EJEMPLO3
+
+(sampleData = data.frame(
+  condition = factor(rep(c("ctrl_minus", "ctrl_plus",
+                           "ko_minus", "ko_plus"), 3)),
+  batch = factor(rep(1:6, each = 2))))
+
+vd <- VisualizeDesign(sampleData = sampleData,
+                      designFormula = ~ 0 + batch + condition,
+                      textSizeFitted = 4, lineWidthFitted = 20,
+                      dropCols = "conditionko_minus")
+cowplot::plot_grid(plotlist = vd$plotlist, ncol = 1)
+
+## =========
+## =========
 
 ## ----download_SRP045638---------------------------------------
 library("recount3")
@@ -55,6 +98,9 @@ assay(rse_gene_SRP045638, "counts") <- compute_read_counts(rse_gene_SRP045638)
 ## ----describe_issue-------------------------------------------
 rse_gene_SRP045638$sra.sample_attributes[1:3]
 
+# Hay algunas muestras que tienen otras variables, dev_stage, lo mejor es eliminarlas
+
+## Limpiar datos
 
 ## ----solve_issue----------------------------------------------
 rse_gene_SRP045638$sra.sample_attributes <- gsub("dev_stage;;Fetal\\|", "", rse_gene_SRP045638$sra.sample_attributes)
@@ -155,7 +201,7 @@ colnames(mod)
 
 
 ## ----run_limma------------------------------------------------
-library("limma")
+library("limma") # Paquete para hacer t-value muy eficientemente
 vGene <- voom(dge, mod, plot = TRUE)
 
 eb_results <- eBayes(lmFit(vGene))
@@ -189,7 +235,7 @@ df <- as.data.frame(colData(rse_gene_SRP045638)[, c("prenatal", "sra_attribute.R
 colnames(df) <- c("AgeGroup", "RIN", "Sex")
 
 ## Hagamos un heatmap
-library("pheatmap")
+library("pheatmap") # pretty headmap
 pheatmap(
   exprs_heatmap,
   cluster_rows = TRUE,

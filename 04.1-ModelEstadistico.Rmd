@@ -1,0 +1,89 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+3 fromas de explicar un concepto matemático: 
+- Concp teórico
+- Ejemplo gráfico
+- Explicación metemática
+
+```{r}  
+with # Escribir menos código
+```
+
+
+t-value = E/(Error_std)
+P(|t|) # Proba  
+
+## ExploreModelMatrix (Paquete)
+Para entender el modelo estadístico
+
+
+R1 - R2 = 
+C2 - C1 = treatment trt
+La diferencia entre el tratamiento y el control es el coeficiente de tratamiento manteniendo el fenotipo constante (A y B)
+
+Si el coeficiente de tratamiento vale 5, significa que el tratamiento aumenta 5 unidades el fenotipo del control
+
+
+Interacción entre os variables
+Var1:Var2
+
+Uso de shiny app para interpretar los coeficientes (variables) de los datos del modelo}
+
+El vatiable de 
+
+
+## Normalización de datos
+** Alicia Oshlack
+** Matk Robinson
+
+      A B
+gene1 1 1
+gene2 1 0
+TOTAL 2 1
+Normalizar gene1:A = 1/2 = 0.5
+Normalizar gene1:B = 1/1 = 1
+      A  B
+gene1 .5 1
+gene2 .5 0
+
+### calcNormFactors (paquete)
+`?edgeR::calcNormFactors`
+
+FDRC = 0.05 
+
+
+### limma (paquete)
+-> Gordon Smyth, autor de limma
+
+edgeR2
+
+DESeq2, competencia de limma
+
+
+`limma::plotMA()`
+`limma::volcanoplot()`
+Mientras
+
+
+## EnhancedVolcano
+Para hacer gráficas de volcano para publicarse
+
+
+## Heatmap
+ 
+Mostrar una serie de genes y resumir sus valores de expresión
+
+Escojer los 50 genes con p-valor más pequeño
+
+## PlotMDS
+Para checar que no se estén sobrelapando genes distintos grupos
+
+** David McCarthy, 
+
+[](https://bioconductor.org/packages/release/bioc/vignettes/EnhancedVolcano/inst/doc/EnhancedVolcano.html)
+
+## Proyecto
+~ 12 muestras
