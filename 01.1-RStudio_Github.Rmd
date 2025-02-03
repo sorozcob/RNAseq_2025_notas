@@ -1,0 +1,74 @@
+---
+title: "01-RStudio_Github"
+author: "Santiago Orozco"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## 
+
+
+- Slack CDSB
+
+- R-bloggers: para difusión de blogs
+Bluesky (reemplazo de Twitter): principalmente comunidad de r
+``#rstats, #rstatses, #TidyTuesday limpieza de datos``
+
+- Paquete **reprex** para hacer ejemplos de reproductividad de código
+Reformatea código crudo, al hacer comentarios eliminar parte del shell, etc. 
+Ideal para facilitar el pedir ayuda y reportar errores (a desarrolladores de código) con errores 
+
+
+- Paquete **sessioninfo** da información sobre la versión de R
+Sintaxis <details> para ocultar 
+
+
+[ x ] Practicar usar reprex   
+
+[RStudio Cheatsheet](https://rstudio.github.io/cheatsheets/rstudio-ide.pdf)
+
+Para ver más Cheatsheets: [aquí](https://posit.co/resources/cheatsheets/)
+
+## Uso de AI para escribir código
+
+Para usar GitHub Copilot, se puede usar la función `chattr::chattr_app` activa la función de AI en RStudio. Despliega una conversación en la sección Viewer del 4 panel.
+
+### ellmer
+Chat en un prompt de la consola, salir de la función con `Q` 
+```{r}  
+install.packages("ellmer")
+
+library("ellmer")
+chat <- chat_github()
+live_console(chat)
+```
+
+### Otras herramientas de AI
+**pal**: Para tareas de programación que pueden ser repetitivas.
+```{r}  
+install.packages("pak")
+pak::pak("simonpcouch/pal")
+
+
+library("pal")
+```
+
+**mall**: para hacer “sentiment analysis”
+
+**lang**: para traducir la ayuda de paquetes a tu idioma
+```{r}  
+install.packages("pak")
+pak::pak("mlverse/lang")
+
+Sys.getenv("LANG")
+## 6b. Cambia tu lenguaje si quieres
+Sys.setenv(LANGUAGE = "Spanish")
+
+## 7. Prueba lang
+library("lang")
+llm_use("ollama", "llama3.2", seed = 100)
+?lm
+```
+
+
+

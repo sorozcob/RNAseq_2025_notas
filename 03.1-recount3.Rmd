@@ -112,3 +112,6 @@ install.packages("postcards")
 
 ```
 
+
+`usethis::use_git` para activar el control de versiones (git)
+`usethis::use_github` para subirlo a GitHub
