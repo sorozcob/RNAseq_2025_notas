@@ -2,7 +2,7 @@
 title: "Bioconductor"
 author: "Santiago Orozco"
 date: "`r Sys.Date()`"
-output: pdf_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -23,13 +23,14 @@ Junta de Comunidad, Científica y Técnica. Para que ayuda a promover la unión 
 
 [Bioconductor](https://bioconductor.org/)
 
-- Software
+## Tipos de Paquetes
+- Software: paquetes principales
 - AnnotationData: permiten accesar a db sin la necesidad de descargar la db. Los crea el equipo de Bioconductor en general
 **Aaron Lun
 - ExperimentData: son los datos de proyectos para poder reanalizar los datos de una forma más sencilla
 ** Alejandro Reyes, genómico de la 5° generación
 ** Robert Gentleman, funfador de Bioconductor
-- Workflow: es 
+- Workflow: demuestran cómo usar paquetes de Bioc para ciertos tipos de análisis
 
 Rank: basado en el número de descargas. Mientras más bajo el número más descargado es.
 
@@ -44,6 +45,14 @@ Para tener diferentes versiones de BioConductor, se recomienda tener diferentes 
 
 Para ver en dónde hay paquetes instalados usar `.libPaths()`. Hay un orden de prioridad en la instalación de paquete, el primero en la lista es el que se va a descargar
 
+## Descubrir paquetes de Bioconductor
+
+- Paquetes através de biocViews, estructura de árbol. (http://bioconductor.org/packages/release/BiocViews.html#___Software)
+
+- Lista de nuevos paquetes de Bioconductor: (http://bioconductor.org/news/bioc_3_20_release/)
+
+
+
 ## Página de un paquete de Bioconductor
 Suport: preguntas en los últimos 6 meses
 Documentación:
@@ -56,7 +65,7 @@ Detalles:
 - URL: para encontrar más información (GitHub, sitio web)
 - Bug Report: dónde reportar errores
 
-
+## Ramas de Bioconductor
 release: Consumo público. Números pares en el Y de la edición (3.20)
 devel: Versión de prueba, o los más recientes aprovado. Nones (3.21)
 
@@ -66,12 +75,14 @@ BioC se actualiza 2 veces al año (abril y ocutubre)
 Apartado de 'Learn'
 Eventos 
 
-Eventos de CDSB
+Eventos de CDSB:
+- https://comunidadbioinfo.github.io/#events (inglés) 
+- https://comunidadbioinfo.github.io/es/#events (español)
 
 ** Mara Averick, difundadora de paquetes de BioC
 
 
-Ejercicios grupal:
+## Ejercicios grupal:
 **Multi-omic Pathway Analysis of Cancer**
 **scDotPlot**
 Paquete gráfico
