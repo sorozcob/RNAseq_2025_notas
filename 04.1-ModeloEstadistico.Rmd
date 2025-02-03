@@ -1,6 +1,8 @@
 ---
-title: "R Notebook"
-output: html_notebook
+title: "04.1-ModeloEstadistico"
+author: "Santiago Orozco"
+date: "`r Sys.Date()`"
+output: html_document
 ---
 
 3 fromas de explicar un concepto matemático: 

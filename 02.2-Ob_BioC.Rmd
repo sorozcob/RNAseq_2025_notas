@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "SummarizedExperiment"
 author: "Santiago Orozco"
 date: "`r Sys.Date()`"
 output: html_document
@@ -51,4 +51,6 @@ Descargar figuras de iSEE: Export > Display panel outputs, descargar las figuras
 
 ** `lobster::obj_size(objeto)` para ver el tamaño del objeto
 
+## Ejercicio con iSEE
 
+Debido a que al intentar descargar las figuras en formato no se pudo. Solo daba la opción de descargar como .html (en realidad marcaba com .htm) y a que al descargarlo era ilegible. Se procedió a realizar un screenshot de la figura y se guardó en formato .png. Ver carpeta de figuras `Fig`, los archivos `02.4-PCA_sce_layer.png` y `02.5-heatmap_sce_layer.png`
